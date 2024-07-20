@@ -1,1 +1,1 @@
-# alura
+# Listas de exercícios e projetos da ONE - Oracle Next Education
