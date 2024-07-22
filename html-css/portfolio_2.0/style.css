@@ -1,11 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    margin-top: 30px;
+}
+
 body{
     display: flex;
-    flex: 1;
     flex-direction: column;
+    width: 100vw;
+    height: 100vh;
     color: white;
-    background-color: #141301;
+    background-color: #19180a;
     align-items: center;
-    justify-content: center;
+    gap: 60px;
 }
 
 main{
@@ -13,62 +23,75 @@ main{
     flex: 1;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-self: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 #main-left{
     display: flex;
-    flex: 1;
-    flex-direction: column;
     flex-wrap: wrap;
+    flex-direction: column;
     max-width: 615px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    gap: 40px;
+}
+
+#title{
+    font-family: 'Krona One', Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    line-height: 56px;
+    font-weight: 100;
+}
+
+#main-right{
+    max-width: fit-content;
+}
+
+#link-header{
+    text-align: center;
+    font-family: 'Krona One', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 #main-links{
     display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 10px;
-    max-width: 588px;
-}
-
-#title{
-    font-family: "Krona One", sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 56px;
-}
-
-strong{
-    color: #22D4FD;
-}
-
-p{
-    font-family: "Montserrat", sans-serif;
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 300;
-}
-
-a{
-    font-family: "Montserrat", sans-serif;
-    background-color: #22D4FD;
-    width: 280px;
-    line-height: 65px;
-    text-align: center;
-    border-radius: 16px;
-    height: 65px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 a:link, a:visited{
-    color: #141301;
-    font-size: 18px;
-    font-weight: 600;
+    display: flex;
+    color: white;
     text-decoration: none;
+    text-align: center;
+    border: 2px solid #ff7d00;
+    padding: 16px;
+    width: 378px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+a:hover{
+    border-color: white;
+}
+
+strong{
+    color: #ff7d00;
+}
+
+#link-icon{
+    width: 24px;
+    height: 24px;
 }
 
 img{
-    align-self: center;
+    width: 100%;
 }
+
