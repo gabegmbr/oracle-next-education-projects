@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --cor-primaria: #F6F6F6;
+    --cor-secundaria: #FF7D00;
+    --cor-terciaria: #1d1a05;
+}
+
+body{
+    color: #F6F6F6;
+    background-color: var(--cor-terciaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+header{
+    padding: 3% 0% 0%;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    
+}
+
+nav a:link, nav a:visited{
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: var(--cor-primaria);
+}
+
+main{
+    padding: 5%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#main-left{
+    display: flex;
+    flex-direction: column;
+    max-width: 615px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    gap: 30px;
+}
+
+#title{
+    font-family: 'Krona One', Arial, Helvetica, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+}
+
+#title strong{
+    font-weight: 400;
+}
+
+#main-links{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 378px;
+    font-weight: 600;
+    gap: 10px;
+    align-self: center;
+}
+
+#main-links img {
+    width: 24px;
+    height: 24px;
+}
+
+#main-links h2{
+    font-family: 'Krona One', Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+#main-links a:link, a:visited{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    padding: 21.6px;
+}
+
+#main-links a:hover{
+    filter: saturate(0%) contrast(7);
+}
+
+#main-right img{
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    gap: 10px;
+    padding: 24px;
+}
+
+footer a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+footer img{
+    filter: saturate(0%) contrast(7);
+    width: 24px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+strong{
+    color: var(--cor-secundaria);
+}
+
+@media (max-width: 1024px){
+    main {
+        flex-direction: column-reverse;
+    }
+    #main-right{
+        width: 100%;
+        align-self: center;
+    }
+
+}
