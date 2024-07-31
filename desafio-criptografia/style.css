@@ -1,0 +1,8 @@
+#text-panel{
+    display: flex;
+    flex-direction: column;
+}
+
+#text-panel textarea{
+    min-height: 200px;
+}
