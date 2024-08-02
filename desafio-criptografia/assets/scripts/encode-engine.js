@@ -15,6 +15,8 @@ function changeMode(mode){
         inputText.addEventListener("keypress", encodeKeypress);
         inputText.addEventListener("keydown", encodeKeydown);
         inputText.addEventListener("paste", encodePaste);
+        decodeButton.disabled = false;
+        encodeButton.disabled = true;
     } else{
         textMode = "decode";
         reset();
@@ -24,6 +26,8 @@ function changeMode(mode){
         inputText.addEventListener("keypress", decodeKeypress);
         inputText.addEventListener("keydown", decodeKeydown);
         inputText.addEventListener("paste", decodePaste);
+        decodeButton.disabled = true;
+        encodeButton.disabled = false;
     }
 }
 

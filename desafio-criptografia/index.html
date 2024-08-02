@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
+    <script src="./assets/scripts/encode-engine.js" defer></script>
+    <script src="./assets/scripts/save-text.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Decodificador de texto</title>
 </head>
 <body>
     <main>
-        <div id="panel-buttons">
-            <button id="encodeButton" onclick="changeMode('encode')">Codificar</button>
-            <button id="decodeButton" onclick="changeMode('decode')">Decodificar</button>
-        </div>
         <div id="text-panel">
-            <textarea id="inputText"></textarea>
-            <textarea readonly id="outputText"></textarea>
-            <button id="save" onclick="save()">Salvar</button>
+            <h3>Modo:</h3>
+            <div id="panel-buttons">
+                <button id="encodeButton" onclick="changeMode('encode')">Codificar</button>
+                <button id="decodeButton" onclick="changeMode('decode')">Decodificar</button>
+            </div>
+            <textarea id="inputText" placeholder="Digite o seu texto aqui."></textarea>
+            <div id="output-panel">
+                <textarea readonly id="outputText"></textarea>
+                <button id="save" onclick="save()"><img src="./assets/icons/save.svg" alt="botão de salvar">Salvar texto</button>
+            </div>
+        </div>
+        <div id="saved-texts">
+            <div id="no-text">
+            </div>
         </div>
     </main>
 </body>
