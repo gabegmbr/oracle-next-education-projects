@@ -68,7 +68,6 @@ function encodeChar(char, mode){
         }
     }
     if (mode == 'del'){
-        delpressed = false;
         switch(char){
             case 'a':
                 delOutput(-2);
@@ -92,9 +91,7 @@ function encodeChar(char, mode){
     }
 }
 
-function decodeChar(char, mode){
-    let text = outputText.value;
-    let textDel = inputText.value;
+function decodeChar(text, char, mode){
     if(mode == "ins"){
         switch(char){
             case 'i':
@@ -130,26 +127,26 @@ function decodeChar(char, mode){
     if (mode == 'del'){
         switch(char){
             case 'i':
-                if(textDel.slice(-2) == "ai"){
+                if(text.slice(-2) == "ai"){
                 } else{
                     delOutput(-1);
                 } break;
             case 'r':
-                if(textDel.slice(-4) == "ober"){
+                if(text.slice(-4) == "ober"){
                     insOutput("be");
-                } else if (textDel.slice(-5) == "enter"){
+                } else if (text.slice(-5) == "enter"){
                     insOutput("nte");
                 } else{
                     delOutput(-1);
                 } break;
             case 's':
-                if(textDel.slice(-4) == "imes"){
+                if(text.slice(-4) == "imes"){
                     insOutput("me");
                 } else{
                     delOutput(-1);
                 } break;
             case 't':
-                if(textDel.slice(-4) == "ufat"){
+                if(text.slice(-4) == "ufat"){
                     insOutput("fa");
                 } else{
                     delOutput(-1);
@@ -176,16 +173,17 @@ function encodePaste(pastedContent){ //cópia de caracteres
     }
 }
 function decodeKeypress(pressed){
-    decodeChar(pressed.key, 'ins');
+    decodeChar(inputText.value, pressed.key, 'ins');
 }
 function decodeKeydown(pressed){ //exclusão de caracteres
     if(pressed.key == "Backspace"){
-        decodeChar(inputText.value.slice(-1), 'del');
+        decodeChar(inputText.value, inputText.value.slice(-1), 'del');
     }
 }
 function decodePaste(pastedContent){ //cópia de caracteres
-    let pasteText = Array.from(pastedContent.clipboardData.getData('text'));
-    for(let y = 0; y < pasteText.length; y++){
-        decodeChar(pasteText[y], 'ins');
+    let pasteText = pastedContent.clipboardData.getData('text');
+    for(let i = 0; i < pasteText.length; i++){
+        console.log(pasteText.charAt(i));
+        decodeChar(pasteText.slice(0, i), pasteText.charAt(i), 'ins');
     }
 }

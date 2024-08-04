@@ -6,25 +6,27 @@
     <script src="./assets/scripts/encode-engine.js" defer></script>
     <script src="./assets/scripts/save-text.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <title>Decodificador de texto</title>
 </head>
 <body>
     <main>
         <div id="text-panel">
-            <h3>Modo:</h3>
             <div id="panel-buttons">
+                <h4>Modo:</h4>
                 <button id="encodeButton" onclick="changeMode('encode')">Codificar</button>
                 <button id="decodeButton" onclick="changeMode('decode')">Decodificar</button>
             </div>
-            <textarea id="inputText" placeholder="Digite o seu texto aqui."></textarea>
+            <textarea id="inputText" placeholder="Digite o seu texto aqui." maxlength="10000"></textarea>
             <div id="output-panel">
                 <textarea readonly id="outputText"></textarea>
                 <button id="save" onclick="save()"><img src="./assets/icons/save.svg" alt="botão de salvar">Salvar texto</button>
             </div>
         </div>
         <div id="saved-texts">
-            <div id="no-text">
-            </div>
+            <h3>Textos salvos</h3>
         </div>
     </main>
 </body>
